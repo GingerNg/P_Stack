@@ -61,14 +61,12 @@ class Node:
         查找文件，先在本机查找，如果找到则返回，找不到则查找其他已知节点
         """
         try:
-            print 'search local'
             return self._handle(query)
         except UnhandledQuery:
             # 添加到history，标记查找的深度
             history = history + [self.url]
             if len(history) >= MAX_HISTORY_LENGTH:
                 raise
-            print 'search other server'
             return self._broadcast(query, history)
 
     def hello(self, other):
@@ -81,11 +79,10 @@ class Node:
         """
         用于从节点下载数据
         """
-        print 'server.fetch'
         if secret != self.secret:
             raise AccessDenied
         result = self.query(query)
-        print 'result----',result
+        print ('result----',result)
         # 把查询到的数据写到本地
         f = open(join(self.directory, query), 'w')
         f.write(result)
