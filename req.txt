@@ -1,0 +1,16 @@
+configparser==3.5.0
+lazy-object-proxy==1.2.2
+protobuf==2.6.1
+pycrypto==2.6.1
+pylint==1.6.1
+PyYAML==3.11
+redis==2.10.5
+requests==2.10.0
+six==1.10.0
+web.py==0.37
+wrapt==1.10.8
+Django==1.6
+ConfigObj == 5.0.6
+pybloom
+pymongo==3.6.1
+
