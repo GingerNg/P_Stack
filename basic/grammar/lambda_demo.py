@@ -33,3 +33,6 @@ if __name__ == '__main__':
 
     print (reduce(lambda x, y: x + y, foo))
     # 139
+
+    fl = [{"ans_score":0.9,"ans":"test1"}, {"ans_score":0.1,"ans":"test2"}]
+    print([f for f in fl if f["ans_score"] > 0.5])

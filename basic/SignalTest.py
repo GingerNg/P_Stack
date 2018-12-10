@@ -1,17 +1,16 @@
 # coding=utf-8
-
+"""
+# http://www.jb51.net/article/74844.htm
+"""
 import os
 import signal
 from time import sleep
 
 
-
-# http://www.jb51.net/article/74844.htm
-
-
 def sigHandler(signum, frame):
-    print ("stop")
+    print("stop")
     exit()
+
 
 # kill -l
 
@@ -22,8 +21,6 @@ if __name__ == "__main__":
     signal.signal(signal.SIGALRM, sigHandler)
     signal.alarm(20)  # signal.alarm()执行20秒之后，进程将向自己发出SIGALRM信号
     while 1:
-        print ('我的进程id是', os.getpid())
+        print('我的进程id是', os.getpid())
 
         sleep(10)
-
-
