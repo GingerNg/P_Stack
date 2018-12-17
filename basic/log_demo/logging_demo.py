@@ -25,7 +25,7 @@ def getLogging3():
     return logging.getLogger("logger_root")
 
 
-logging.config.fileConfig('log.conf')  # 仅第一次读取有效
+logging.config.fileConfig('log_demo.conf')  # 仅第一次读取有效
 logger1 = getLogging()
 logger2 = getLogging2()
 # logger3 = getLogging2()

@@ -21,7 +21,7 @@ class CleanerMeta(type):
         detect_sensitive_words(class_name)  # 检查类名
         map(detect_sensitive_words, attrs.iterkeys())  #检查属性名
 
-        print "Well done! You are a polite coder!" # 如无异常，输出祝贺消息
+        print ("Well done! You are a polite coder!") # 如无异常，输出祝贺消息
 
         return super(CleanerMeta, cls).__new__(cls, class_name, bases, attrs)
         # 重要！这行一定不能漏！！这回调用内建的类构造器来构造类，否则定义好的类将会变成 None

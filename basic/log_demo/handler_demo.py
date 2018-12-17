@@ -19,10 +19,10 @@ logger = logging.getLogger('mylogger')
 print (logger.name)
 logger.setLevel(logging.INFO)
 
-dev_handler = logging.handlers.TimedRotatingFileHandler('dev.log', when='midnight', interval=1, backupCount=7)
+dev_handler = logging.handlers.TimedRotatingFileHandler('dev.log_demo', when='midnight', interval=1, backupCount=7)
 dev_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
 
-prod_handler = logging.FileHandler('prod.log')
+prod_handler = logging.FileHandler('prod.log_demo')
 prod_handler.setLevel(logging.ERROR)
 prod_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(filename)s[:%(lineno)d] - %(message)s"))
 
@@ -39,7 +39,7 @@ test_logger = logging.getLogger("test")
 stream_hander = logging.StreamHandler()
 stream_hander.setLevel(logging.INFO)
 test_logger.addHandler(stream_hander)
-test_logger.info("this is stream log")
+test_logger.info("this is stream log_demo")
 
 
 k = 1

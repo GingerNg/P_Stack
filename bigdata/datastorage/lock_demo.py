@@ -68,7 +68,7 @@ def init_logging():
     formatter = logging.Formatter('%(asctime)s -%(module)s:%(filename)s-L%(lineno)d-%(levelname)s: %(message)s')
     sh.setFormatter(formatter)
     logger.addHandler(sh)
-    logging.info("Current log level is : %s", logging.getLevelName(logger.getEffectiveLevel()))
+    logging.info("Current log_demo level is : %s", logging.getLevelName(logger.getEffectiveLevel()))
 
 
 def main():

@@ -9,7 +9,7 @@ import time
 import logging
 import filecmp  # filecmp提供3个操作方法，cmp(单文件对比),cmpfile(多文件对比),dircmp(目录对比). python自带模块,无需安装
 #日志文件配置
-log_filename = 'synchro.log'
+log_filename = 'synchro.log_demo'
 #日志输出格式化
 log_format = '%(filename)s [%(asctime)s] [%(levelname)s] %(message)s'
 logging.basicConfig(format=log_format,
