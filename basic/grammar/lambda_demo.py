@@ -18,7 +18,7 @@ make_incrementor1 = lambda x: x + m
 
 f = make_incrementor(46)
 n = 10
-print(f(n))
+print(f(n))  # 56
 
 if __name__ == '__main__':
     print(make_incrementor1(3))
@@ -26,6 +26,7 @@ if __name__ == '__main__':
     foo = [2, 18, 9, 22, 17, 24, 8, 12, 27]
 
     print("sum: %s" % sum(foo))
+    print(list(filter(lambda x: x == 0, foo)) == [])
 
     print(list(filter(lambda x: x % 3 == 0, foo)))
     # [18, 9, 24, 12, 27]
@@ -42,4 +43,39 @@ if __name__ == '__main__':
     fl = {"ans_score": 0.9, "ans": 0.8}
     print([k for k, v in fl.items() if v > 0.5])
 
+    test = {"t":"q","w":"f"}
+    print(("t" in test))  # True
+    print(("q" in test))  # False
+    print(test.values()) # list
+
+    wdict = {}
+    for k, v in wdict if type(wdict) is type([]) else wdict.items():
+        print(k,v)
+
+    for i in "test":
+        print(i)
+
+    """
+    三目运算符
+    """
+    x = 2
+    x = x+1 if x%2==1 else x
+
+    ss = set()
+    ss.add("test")
+    ss.add("test")
+    print(ss)
+
+    # 两个list合并&去重
+    a = [1,3,5,7]
+    b = [1,3,4,6,8]
+    c=list(set(a) | (set(b)))
+
+    # c = list(set(a + b))
+
+    print(c)
+
+    print(str(["1","2"]))
+    items = [{"sale":1.0},{"sale":2.0}]
+    print(reduce(lambda x, y: x["sale"] + y["sale"], items))
 

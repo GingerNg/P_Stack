@@ -30,6 +30,14 @@ def class_to_dict(obj):
         dict.update(obj.__dict__)
         return dict
 
+def list2str(list):
+    return ' '.join(list)
+
+def str2list(str):
+    list(map(int, '12345'))
+
+# split: str--> list
+
 class Student:
     name = ''
     age = 0
@@ -43,3 +51,6 @@ stu = Student('XXX', 20)
 if __name__=='__main__':
     print (convert_to_dict_list([stu, stu]))
     print (class_to_dict([stu, stu]))
+
+
+    print(list2str(["taobao","baidu"]))

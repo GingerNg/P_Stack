@@ -7,10 +7,18 @@ def prn_obj(obj):
     print ('\n'.join(['%s:%s' % item for item in obj.__dict__.items()]))
 
 class A(object):
-    pass
+    def __init__(self,a):
+        self.a = a
+
+class B(A):
+    def __init__(self, a):
+        super().__init__(a)
+
+
+
 
 if __name__ == "__main__":
-    a = A()
+    a = A(1)
 
     a.b = 1
 
