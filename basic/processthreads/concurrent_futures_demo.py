@@ -24,12 +24,14 @@ def main():
         sayhello(each)
     end1=time.time()
     print("time1: "+str(end1-start1))
+
     start2=time.time()
     with ThreadPoolExecutor(3) as executor:
         for each in seed:
             executor.submit(sayhello,each)
     end2=time.time()
     print("time2: "+str(end2-start2))
+
     start3=time.time()
     with ThreadPoolExecutor(3) as executor1:
         executor1.map(sayhello,seed)

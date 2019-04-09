@@ -2,6 +2,7 @@
 """
 @author: ginger
 @file: trie_tree.py
+单词字典树
 """
 # coding:utf-8
 """
@@ -78,9 +79,7 @@ class Trie(object):
         def _get_key(pre, pre_node):
             words_list = []
             if pre_node.is_word:
-                words_list.append(
-
-                )
+                words_list.append(pre_node)
             for x in pre_node.data.keys():
                 words_list.extend(_get_key(pre + str(x), pre_node.data.get(x)))
             return words_list

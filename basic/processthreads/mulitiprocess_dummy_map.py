@@ -2,7 +2,7 @@
 dummy 是 multiprocessing 模块的完整克隆，唯一的不同在于 multiprocessing 作用于进程，
 而 dummy 模块作用于线程（因此也包括了 Python 所有常见的多线程限制）
 CPU密集型--多进程
-IO密集型--多线程
+IO密集型--多线程   dummy
 """
 import requests
 # import urllib3
@@ -33,7 +33,9 @@ def task(url):
     res = requests.get(url=url)
     print(res.content)
 
-
+"""
+适合一次性取数据,多线程/多进程处理
+"""
 # Make the Pool of workers
 # Open the urls in their own threads
 # and return the results
@@ -41,5 +43,7 @@ results = pool.map(task, urls)
 #close the pool and wait for the work to finish
 pool.close()
 pool.join()
+
+
 
 

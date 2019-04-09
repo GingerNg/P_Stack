@@ -19,7 +19,7 @@ def demo_simplejson(fin):
 
 def demo_simdjson(fin):
 
-    # doc = simdjson.ParsedJson(fin.read()).to_obj()
+    # doc = simdjson.ParsedJson(fin.read())
     # doc = simdjson.loads(fin)
     doc = simdjson.ParsedJson(fin).to_obj()
     # print(doc)

@@ -9,7 +9,7 @@ import os, time, random
 # 写数据进程执行的代码:
 def write(q):
     for value in ['A', 'B', 'C']:
-        print 'Put %s to queue...' % value
+        print ('Put %s to queue...' % value)
         q.put(value)
         time.sleep(random.random())
 
@@ -17,7 +17,7 @@ def write(q):
 def read(q):
     while True:
         value = q.get(True)
-        print 'Get %s from queue.' % value
+        print ('Get %s from queue.' % value)
 
 if __name__=='__main__':
     # 父进程创建Queue，并传给各个子进程：
