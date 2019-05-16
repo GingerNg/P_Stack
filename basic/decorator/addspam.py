@@ -4,6 +4,14 @@
 import time
 
 
+def paramcheck(func):
+    """
+    参数校验
+    """
+    def wrapper(request, *args, **kw):
+        return func(request, *args, **kw)
+    return wrapper
+
 def addspam(fn):  # addspam is a decorator
     def new(*args):
         print ("before")
