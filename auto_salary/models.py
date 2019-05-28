@@ -69,3 +69,9 @@ class AttendType(Enum):
 
 if __name__ == '__main__':
     print(80.0/21.5)
+
+    # 枚举项的遍历
+    for i in AttendType.__members__:
+        print(i)
+    for i in AttendType:
+        print(i.value)
