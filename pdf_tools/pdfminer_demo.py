@@ -10,7 +10,6 @@ from pdfminer.pdfdevice import PDFDevice
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import PDFPageAggregator
 from pdfminer.layout import LTTextBoxHorizontal, LAParams
-# from pdfminer.pdfinterp import
 
 
 def parse(DataIO, save_path):
