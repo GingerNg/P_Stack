@@ -1,0 +1,10 @@
+{
+    "python.linting.enabled": false,
+    "editor.fontSize": 15,
+    "editor.tabSize": 4,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.accessibilitySupport": "off",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
+}

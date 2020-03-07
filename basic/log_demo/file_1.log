@@ -1,0 +1,17 @@
+2018-12-17 17:02:54.226 | INFO     | __main__:<module>:35 - info
+2018-12-17 17:02:54.226 | ERROR    | __main__:<module>:36 - An error has been caught in function '<module>', process 'MainProcess' (67574), thread 'MainThread' (139666914395968):
+Traceback (most recent call last):
+
+> File "/home/ginger/Projects/Learning/P_Stack/basic/log_demo/loguru_demo.py", line 36, in <module>
+    print(my_function(0, 0, 0))
+    │     └ <function my_function at 0x7f06acf1a9d8>
+    └ <built-in function print>
+
+  File "/home/ginger/Projects/Learning/P_Stack/basic/log_demo/loguru_demo.py", line 21, in my_function
+    return 1 / (x + y + z)
+                │   │   └ 0
+                │   └ 0
+                └ 0
+
+ZeroDivisionError: division by zero
+2018-12-17 17:02:54.279 | SNAKY    | __main__:<module>:40 - Here we go!

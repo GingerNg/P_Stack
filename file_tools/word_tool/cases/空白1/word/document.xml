@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 wp14">
+	<body>
+		<p>
+			<pPr>
+				<spacing w:lineRule="auto" w:line="276" />
+			</pPr>
+			<r>
+			</r>
+			<bookmarkStart w:id="1" w:name="bookmark1" />
+<m:oMath>
+
+    <m:f>
+
+        <m:fPr>
+
+            <m:ctrlPr>
+
+                <w:rPr>
+
+                    <w:rFonts w:hint="default" w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math"/>
+
+                    <w:i/>
+
+                </w:rPr>
+
+            </m:ctrlPr>
+
+        </m:fPr>
+
+        <m:num>
+
+            <m:r>
+
+                <w:rPr>
+
+                    <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math"/>
+
+                </w:rPr>
+
+                <m:t>1</m:t>
+
+            </m:r>
+
+            <m:ctrlPr>
+
+                <w:rPr>
+
+                    <w:rFonts w:hint="default" w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math"/>
+
+                    <w:i/>
+
+                </w:rPr>
+
+            </m:ctrlPr>
+
+        </m:num>
+
+        <m:den>
+
+            <m:r>
+
+                <w:rPr>
+
+                    <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math"/>
+
+                </w:rPr>
+
+                <m:t>2</m:t>
+
+            </m:r>
+
+            <m:ctrlPr>
+
+                <w:rPr>
+
+                    <w:rFonts w:hint="default" w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math"/>
+
+                    <w:i/>
+
+                </w:rPr>
+
+            </m:ctrlPr>
+
+        </m:den>
+
+    </m:f>
+
+    <m:r>
+
+        <w:rPr>
+
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math"/>
+
+        </w:rPr>
+
+        <m:t>1=1 formalu</m:t>
+
+    </m:r>
+
+</m:oMath>
+			<bookmarkEnd w:id="1" />
+			<r>
+			</r>
+			<bookmarkStart w:id="0" w:name="_GoBack" />
+			<r>
+			</r>
+			<bookmarkEnd w:id="0" />
+			<r>
+			</r>
+			<r>
+			</r>
+		</p>
+		<sectPr>
+			<footnotePr>
+			</footnotePr>
+			<type w:val="nextPage" />
+			<pgSz w:w="11906" w:h="16838" w:orient="portrait" />
+			<pgMar w:top="1440" w:right="1800" w:bottom="1440" w:left="1800" w:header="851" w:footer="992" />
+			<cols w:num="1" w:sep="0" w:space="425" w:equalWidth="1">
+			</cols>
+			<docGrid w:linePitch="312" w:type="lines" />
+		</sectPr>
+	</body>
+</document>

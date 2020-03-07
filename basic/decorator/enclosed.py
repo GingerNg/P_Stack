@@ -10,5 +10,5 @@ def wrapper():
 cf = wrapper()
 
 if __name__ == '__main__':
-    print type(cf)
-    print cf
+    print (type(cf))
+    print (cf)

@@ -1,7 +1,10 @@
 #!/usr/bin/python
 # coding:utf8
 
-from basic.meta_class import APIBase    # from module import class
+# from basic.meta_class import APIBase    # from module import class
+from basic.meta_class.API.APIBase import APIBase
+
+
 class ImAGoodBoy(APIBase):
     a_polite_attribute = 1
 

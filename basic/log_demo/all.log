@@ -1,0 +1,8 @@
+[2019-11-14 19:56:31,520-logger_test1(DEBUG)logging_demo.py:32]this is an test1 debug!
+[2019-11-14 19:56:31,520-logger_test2(DEBUG)logging_demo.py:33]this is test2 debug
+[2019-11-14 19:56:31,520-logger_test1(INFO)logging_demo.py:34]this is an test1! info 
+[2019-11-14 19:56:31,520-logger_test2(INFO)logging_demo.py:35]this is test2 info 
+[2019-11-14 19:56:31,520-logger_test1(WARNING)logging_demo.py:36]this is an test1! warn
+[2019-11-14 19:56:31,520-logger_test2(WARNING)logging_demo.py:37]this is test2 warn
+[2019-11-14 19:56:31,520-logger_test1(ERROR)logging_demo.py:38]this is an test1!error
+[2019-11-14 19:56:31,520-logger_test2(ERROR)logging_demo.py:39]this is test2 error
