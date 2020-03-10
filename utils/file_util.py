@@ -21,6 +21,8 @@ rb     以二进制读模式打开
  https://www.cnblogs.com/dkblog/archive/2011/02/24/1980651.html
 """
 from __future__ import print_function
+import datetime
+import shutil
 import os
 import fileinput
 import time
@@ -46,25 +48,27 @@ import time
 
 
 def read_file(file_path):
-    file_object = open(file_path,'r')
+    file_object = open(file_path, 'r')
     try:
         all_the_text = file_object.read()
         return all_the_text
     finally:
         file_object.close()
 
+
 def write_file(file_path, content):
-    file_object = open(file_path,'w')   # w  wb binary
+    file_object = open(file_path, 'w')   # w  wb binary
     try:
         file_object.write(content)
     finally:
         file_object.close()
 
+
 def read_file_by_line(file_path):
-    file_object = open(file_path,'r')
+    file_object = open(file_path, 'r')
     try:
         one_line_text = file_object.readline()
-        # if one_line_text:  
+        # if one_line_text:
         #     file_object.close()
         return one_line_text
     finally:
@@ -77,36 +81,47 @@ def read_all_lines(file_path):
     while True:
         time.sleep(1)
         one_line = file_object.readline()
-        print (one_line, end='')  # print 输出不换行
+        print(one_line, end='')  # print 输出不换行
+
+
 '''
 https://www.cnblogs.com/xuxn/archive/2011/07/27/read-a-file-with-python.html
 '''
+
+
 def read_all_file_by_line(file_path):
     line_list = []
     for line in fileinput.input(file_path):
         line_list.append(line)
     return line_list
 
+
 def find_all_file(directory):
     list_path = os.listdir(directory)
     all_file_path = []
-    for i in range(0,len(list_path)):
-        path = os.path.join(directory,list_path[i])
+    for i in range(0, len(list_path)):
+        path = os.path.join(directory, list_path[i])
         if os.path.isfile(path):
             all_file_path.append(path)
     return all_file_path
 
+
 def file_filter(file_paths, by_what=None):
     return file_paths
+
 
 def make_directory_by_time():
     dir_name = ''
     return dir_name
 
+
 def move_file(source_path, target_path):
     pass
+
+
 def get_all_file_size(path):
     pass
+
 
 def read_recovery_info(recovery_path):
     if recovery_path is None:
@@ -119,13 +134,16 @@ def get_line_number(file_path):
     pass
 
 # https://www.cnblogs.com/strongYaYa/p/7200357.html
-def get_all_file_name(file_dir,file_mime = '.jpg'):
+
+
+def get_all_file_name(file_dir, file_mime='.jpg'):
     file_names = []
     for file_name in os.listdir(file_dir):
-            file_split_text = os.path.splitext(file_name)
-            if file_split_text[1] == file_mime:
-                file_names.append(file_split_text[0].split("_")[0])
+        file_split_text = os.path.splitext(file_name)
+        if file_split_text[1] == file_mime:
+            file_names.append(file_split_text[0].split("_")[0])
     return file_names
+
 
     # print os.path.dirname(directory)  # 返回父目录
     # print os.path.basename(directory)
@@ -134,22 +152,25 @@ def get_all_file_name(file_dir,file_mime = '.jpg'):
 判断文件是否存在
 os.path.isfile('d:/assist')
 '''
+
+
 def isexisted(file_path):
     return os.path.exists(file_path)
 
-import datetime
-import shutil
+
 # https://www.cnblogs.com/iderek/p/8035757.html
-def overdue_clean(file_path,days):
+
+
+def overdue_clean(file_path, days):
     """
     定期删除文件夹中的过期数据
     :param file_path:
     :return:
     """
-    ds = list(os.walk(file_path)) #[0][1]  # 获得所有文件夹的信息列表
+    ds = list(os.walk(file_path))  # [0][1]  # 获得所有文件夹的信息列表
     del ds[0]
     for d in ds:  # 遍历该列表
-        if (len(d[2])==0 or _is_overdue(d,days)):
+        if (len(d[2]) == 0 or _is_overdue(d, days)):
             shutil.rmtree(d[0])
 
 
@@ -163,7 +184,8 @@ def _is_overdue(d, days):
     for x in d[2]:  # 遍历这些文件
         now = datetime.datetime.now()  # 获取当前时间
         delta = datetime.timedelta(days=0)
-        ctime = datetime.datetime.fromtimestamp(os.path.getctime(os.path.join(d[0],x)))  # 获取文件创建时间
+        ctime = datetime.datetime.fromtimestamp(
+            os.path.getctime(os.path.join(d[0], x)))  # 获取文件创建时间
         if ctime < (now - delta):  # 若创建于delta天前
             return True
     return False
@@ -172,8 +194,7 @@ def _is_overdue(d, days):
 def main():
     read_all_lines("FILE_PATH")
 
+
 if __name__ == '__main__':
     if __name__ == "__main__":
         overdue_clean("PATH", 1)
-
-
