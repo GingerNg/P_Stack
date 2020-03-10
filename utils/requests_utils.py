@@ -13,6 +13,7 @@ import requests
 python requests 调用restful api
 '''
 
+
 class MessageSender():
     def __init__(self, url, resource_pos=None):
         self.__url = url
@@ -23,7 +24,7 @@ class MessageSender():
             target_url = urljoin(self.__url, self.__resource_pos)
         else:
             # target_url = urljoin(self.__url, resource_pos)
-            target_url =self.__url + resource_pos
+            target_url = self.__url + resource_pos
         return target_url
 
     def message_send(self, data, resource_pos=None):
@@ -34,12 +35,13 @@ class MessageSender():
         result = requests.post(target_url, headers=headers, data=data_json)
         return result
 
-    def message_multipart_post(self,file_path,resource_pos = None):
+    def message_multipart_post(self, file_path, resource_pos=None):
         target_url = self.__composite_target_url(resource_pos)
         print(target_url)
         files = {'file': open(file_path, 'rb')}
-        d_json = {"test":"test"}        # r = requests.post(url, data, files=files)
-        return requests.post(url=target_url,files=files,data=d_json).text
+        # r = requests.post(url, data, files=files)
+        d_json = {"test": "test"}
+        return requests.post(url=target_url, files=files, data=d_json).text
 
     def message_get(self, resource_pos):
         target_url = urljoin(self.__url, resource_pos)
@@ -51,27 +53,30 @@ class MessageSender():
         data_json = json.dumps(data)
         return requests.put(target_url, headers=headers, data=data_json).text
 
-    def message_delete(self, resource_pos,data):
+    def message_delete(self, resource_pos, data):
         headers = {"Content-Type": "application/json"}  # 必需
         target_url = urljoin(self.__url, resource_pos)
         data_json = json.dumps(data)
         return requests.delete(target_url, headers=headers, data=data_json).text
 
+
 def file_extension(path):
     return os.path.splitext(path)[1]
+
+
 if __name__ == '__main__':
     # post test
-    # 
+    #
     # parse_pos = "/parse"
-    # 
+    #
     # upload_pos = "/store/upload/"
-    # 
+    #
     # # print type(resource_pos3)
-    # 
+    #
     # data = {"title": "copy a book"}
-    # 
+    #
     # msg_sender = MessageSender(root_url)
-    # 
+    #
     # print(msg_sender.message_multipart_post("test.xlsx",resource_pos = parse_pos))
 
     # msg_sender.message_put(data, resource_pos3)
@@ -93,9 +98,4 @@ if __name__ == '__main__':
 
     import os.path
 
-
-
-
-
     print(file_extension('wxPython'))
-
