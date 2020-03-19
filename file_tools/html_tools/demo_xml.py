@@ -4,7 +4,7 @@ from xml.etree import ElementTree as ET
 str_xml = open('./cases/report123/content.xml', 'r').read()
 # 将字符串解析成xml特殊对象，root代指xml文件的根节点
 root = ET.XML(str_xml)
-############ 解析方式二 ############
+############ 解析方式二 ############  垂直
 # 直接解析xml文件
 tree = ET.parse("./cases/report123/content.xml")
 # 获取xml文件的根节点
