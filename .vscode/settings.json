@@ -10,7 +10,7 @@
     // "python.linting.flake8Enabled": true,
     // "python.linting.pylintEnabled": false,
     "python.dataScience.jupyterServerURI": "local",
+    "python.dataScience.textOutputLimit":0,
     // 配置远程jupyter notebook地址
     // "python.dataScience.jupyterServerURI": "http://localhost:8890/?token=e5929fc136f269ec922adf404fb17936ec2b983a9d71cc24",
-    // "python.da"
 }
