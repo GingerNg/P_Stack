@@ -13,8 +13,8 @@ def son_process(x, pipe):
     while True:
         try:
             msg = _out_pipe.recv()
-            print msg
-        except EOFError:
+            print(msg)
+        except EOFError as e:
             # 当out_pipe接受不到输出的时候且输入被关闭的时候，会抛出EORFError，可以捕获并且退出子进程
             break
 
@@ -26,9 +26,9 @@ if __name__ == '__main__':
 
     # 等pipe被fork 后，关闭主进程的输出端
     # 这样，创建的Pipe一端连接着主进程的输入，一端连接着子进程的输出口
-    out_pipe.close() # out_pipe.closed = True
+    out_pipe.close()  # out_pipe.closed = True
     for x in range(10):
         in_pipe.send(x)
     in_pipe.close()
     son_p.join()
-    print "主进程也结束了"
+    print("主进程也结束了")

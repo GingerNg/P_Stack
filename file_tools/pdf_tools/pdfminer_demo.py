@@ -1,15 +1,17 @@
+import os
+from pdfminer.layout import LTTextBoxHorizontal, LAParams, LTRect
+from pdfminer.converter import PDFPageAggregator
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfdevice import PDFDevice
+from pdfminer.pdfparser import PDFParser
 import urllib
-import importlib, sys
+import importlib
+import sys
 
 from pdfminer.pdfdocument import PDFTextExtractionNotAllowed, PDFDocument
 from pdfminer.pdfpage import PDFPage
 
 importlib.reload(sys)
-from pdfminer.pdfparser import PDFParser
-from pdfminer.pdfdevice import PDFDevice
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-from pdfminer.converter import PDFPageAggregator
-from pdfminer.layout import LTTextBoxHorizontal, LAParams
 
 
 def parse(DataIO, save_path):
@@ -38,12 +40,12 @@ def parse(DataIO, save_path):
         # 循环遍历列表，每次处理一个page内容
         # doc.get_pages()获取page列表
         for page in PDFPage.create_pages(doc):
-        # for page in doc.get_pages():
+            # for page in doc.get_pages():
             interpreter.process_page(page)
             # 接收该页面的LTPage对象
             layout = device.get_result()
             # 这里的layout是一个LTPage对象 里面存放着page解析出来的各种对象
-            # 一般包括LTTextBox，LTFigure，LTImage，LTTextBoxHorizontal等等一些对像
+            # 一般包括LTTextBox，LTFigure，LTImage， LTTextBoxHorizontal,LTRect 等等一些对像
             # 想要获取文本就得获取对象的text属性
             for x in layout:
                 try:
@@ -52,13 +54,19 @@ def parse(DataIO, save_path):
                             result = x.get_text()
                             print(result)
                             f.write(result + "\n")
-                except:
+                except Exception as e:
                     print("Failed")
+            break
 
 
 if __name__ == '__main__':
+    file_name = "页面提取自－中行.pdf"
+    # file_name = "爱仕达：2018年第三季度报告正文.pdf"
+    # file_name = "碧水源(300070)我们真正缺少的是干净水,新水源开发破解缺水难题.pdf"
+    # file_name = "天龙集团：2018年第三季度报告全文 7.pdf"
+    full_path = "/home/ginger/Projects/Learning/P_Stack/file_tools/pdf_tools"+"/pdfs/"+file_name
     # 解析本地PDF文本，保存到本地TXT
-    with open(r'/home/ginger/case5.pdf', 'rb') as pdf_html:
+    with open(full_path, 'rb') as pdf_html:
         parse(pdf_html, r'cases.txt')
 
     # 解析网络上的PDF，保存文本到本地

@@ -1,5 +1,11 @@
 file_tools/pdf_tools/.ipynb_checkpoints/*.ipynb
-file_tools/pdf_tools/pdfs/*.pdf
-file_tools/word_tool/海通产品中心需求/*
-file_tools/pdf_tools/*.png
-file_tools/word_tool/cases/*
+*.pyc
+*.doc
+*.docx
+*.log
+*.png
+*.pdf
+*.html
+*.xlsx
+*.zip
+*.xml

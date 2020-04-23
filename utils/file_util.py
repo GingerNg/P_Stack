@@ -3,8 +3,8 @@
 
 """
  @File: file_util.py
- @author: ginger 
- @software: PyCharm  
+ @author: ginger
+ @software: PyCharm
  @time: 17-11-9 下午8:28
  @desc:
  @source: https://www.cnblogs.com/lovebread/archive/2009/12/24/1631108.html

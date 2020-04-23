@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-# Author:  chenhailong --<chenhailong@chinadep.com>
 # Created: 2017/5/19
 #
 

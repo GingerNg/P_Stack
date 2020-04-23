@@ -6,6 +6,7 @@ import difflib
 https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/#id27
 """
 
+
 class DocxDiff(difflib.HtmlDiff):
     def __init__(self):
         super().__init__()
@@ -29,10 +30,12 @@ class DocxDiff(difflib.HtmlDiff):
 
         return list(diffs)
 
+
 html1_doc = open("./cases/case3.pdf.html").read()
 html2_doc = open("./cases/case4.pdf.html").read()
 # html1_doc = open("./cases/case5.pdf.html").read()
 # html2_doc = open("./cases/case6.pdf.html").read()
+
 
 def extract_spans(html_doc):
     """
@@ -50,15 +53,17 @@ def extract_spans(html_doc):
     pages = alltext.find_all("div", class_=re.compile("pc"))
     # print(pages)
     for page in pages:
-        sections = page.find_all("div",recursive=False)
+        sections = page.find_all("div", recursive=False)
         for sec in sections:
             # print(sec.text)
             contents.append(sec.text)
             # print("---")
     return contents
 
+
 contents1 = extract_spans(html1_doc)
 contents2 = extract_spans(html2_doc)
+
 
 def get_lenofline(text_paras):
     """
@@ -66,14 +71,18 @@ def get_lenofline(text_paras):
     """
     lenoflines = []
     return [len(text_paras[i]) for i in range(len(text_paras))]
+
+
 right_lens = get_lenofline(contents2)
 left_lens = get_lenofline(contents1)
+
 
 def sum_lens(lens):
     new_lens = []
     for i in range(len(lens)):
         new_lens.append(sum(lens[0:i+1]))
     return new_lens
+
 
 left_indexes = sum_lens(left_lens)
 right_indexes = sum_lens(right_lens)
@@ -143,6 +152,8 @@ def listdiff(diffs):
                 Ldiffs[-1][0] += c0
                 Ldiffs[-1][1] += c1
     return Ldiffs
+
+
 Ldiffs = listdiff(diff_result)
 
 
@@ -232,23 +243,27 @@ def listdiff(diffs, left_indexes=[], right_indexes=[]):
                 #                 Ladds[-1][1] += c1
                 #                 Ldiffs[-1][0][-1] += c0
                 #                 Ldiffs[-1][1][-1] += c1
-                append_chars(Ldiffs, left_indexes, right_indexes, c0_index, c1_index, c0, c1)
+                append_chars(Ldiffs, left_indexes, right_indexes,
+                             c0_index, c1_index, c0, c1)
             elif cur == "\x03":
                 #                 Ldels[-1][0] += c0
                 #                 Ldels[-1][1] += c1
                 #                 Ldiffs[-1][0][-1] += c0
                 #                 Ldiffs[-1][1][-1] += c1
-                append_chars(Ldiffs, left_indexes, right_indexes, c0_index, c1_index, c0, c1)
+                append_chars(Ldiffs, left_indexes, right_indexes,
+                             c0_index, c1_index, c0, c1)
             elif cur == "\x04":
                 #                 Lchgs[-1][0] += c0
                 #                 Lchgs[-1][1] += c1
                 #                 Ldiffs[-1][0][-1] += c0
                 #                 Ldiffs[-1][1][-1] += c1
-                append_chars(Ldiffs, left_indexes, right_indexes, c0_index, c1_index, c0, c1)
+                append_chars(Ldiffs, left_indexes, right_indexes,
+                             c0_index, c1_index, c0, c1)
             else:
                 #                 Ldiffs[-1][0][-1] += c0
                 #                 Ldiffs[-1][1][-1] += c1
-                append_chars(Ldiffs, left_indexes, right_indexes, c0_index, c1_index, c0, c1)
+                append_chars(Ldiffs, left_indexes, right_indexes,
+                             c0_index, c1_index, c0, c1)
     return Ldiffs
 
 

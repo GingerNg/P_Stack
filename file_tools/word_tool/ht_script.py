@@ -51,7 +51,7 @@ def unzip_file(zfile_path, unzip_dir):
         print(zfile_path+" is a bad zip file ,please check!")
 
 
-def ht(src_file_name, dest_file_name, res_file_name):
+def ht(src_file_name, dest_file_name, res_file_name, work_path):
     src_file_path = work_path + src_file_name + ".docx"
     src_dir = work_path + src_file_name
     unzip_file(zfile_path=src_file_path, unzip_dir=src_dir)
@@ -61,6 +61,7 @@ def ht(src_file_name, dest_file_name, res_file_name):
     a = [m.end() for m in re.finditer("<w:body>", src_xml_doc)]
     e = [m.start() for m in re.finditer("</w:body>", src_xml_doc)]
     content = src_xml_doc[a[0]+1:e[0]]
+    open("./contentt.xml", "w").write(content)
 
     dest_file_path = work_path + dest_file_name + ".docx"
     dest_dir = work_path + dest_file_name
@@ -81,6 +82,8 @@ def ht(src_file_name, dest_file_name, res_file_name):
 
 
 if __name__ == "__main__":
+    """[将src_file插入dest_file,生成res_file]
+    """
     work_path = os.getcwd() + "/file_tools/word_tool/海通产品中心需求/"
     ht(src_file_name="1、插入数据", dest_file_name="2、产品中心产生文档",
        res_file_name="result.docx")
