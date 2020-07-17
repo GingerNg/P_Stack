@@ -3,6 +3,7 @@
 @file: mongo_utils.py
 @time: 2018/4/16 9:59
 """
+import requests
 import json
 import os
 from io import BytesIO
@@ -37,6 +38,9 @@ class MongoDao(object):
     def count(self, filter={}):
         return self.collection.count(filter=filter)
 
+    def delete(self, id):
+        return self.collection.delete_one({"_id": id})
+
     def search_one(self, filter={}):
         return self.collection.find_one(filter, no_cursor_timeout=True)
 
@@ -58,12 +62,13 @@ class MongoDao(object):
         self.collection.update_one(filter=filter, update={
                                    "$set": data}, upsert=upsert)
 
-    def update_many(self, filter={}, update={}):
-        self.collection.update_many(filter=filter, update=update)
+    def update_many(self, filter={}, data={}):
+        self.collection.update_many(filter=filter, update={"$set": data})
 
     def pagination_search(self, filter={}, sort=[], skip=0, limit=10):
         """
         https://www.cnblogs.com/linhan/p/4248679.html
+        [('end', 1)]
         :param filter:
         :return:
         """
@@ -93,6 +98,9 @@ class MongoDao(object):
             # 插入
             self.collection.insert_one(document=data)
 
+    def aggregate(self):
+        self.collection.aggregate()
+
 
 def insertFile(file_path):
     """
@@ -106,7 +114,7 @@ def insertFile(file_path):
         data = BytesIO(img)
         fin.close()
         # conn = MongoClient('10.101.12.23', 27017)
-        conn = MongoClient('101.132.167.173', 8003)
+        conn = MongoClient('192.168.1.218', 8014)
         db = conn.mydb
         coll = db.test_set
         with open(file_path, 'rb') as myimage:
@@ -181,3 +189,17 @@ def get_collection_names(url):
              for db in client.database_names())
     return d
 
+
+if __name__ == "__main__":
+    # dwh_url = "mongodb://%s:%s/" % ("192.168.1.218", "8014")
+    # db_name = "storage_dev"
+    # coll_name = "storage"
+    # storage_mongodao = MongoDao(url=dwh_url,
+    #                             db_name=db_name,
+    #                             coll_name=coll_name)
+    # resp = requests.get(
+        # "http://192.168.1.25/apis/download/?data_id=2020-04-29/2f42fa8c-89be-11ea-ba4e-0242ac120003")
+    # storage_mongodao.insert_one({"html": resp.text})
+    # open("res.html","w").write(resp.text)
+
+    insertFile("./res.html")
