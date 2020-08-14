@@ -9,3 +9,4 @@ file_tools/pdf_tools/.ipynb_checkpoints/*.ipynb
 *.xlsx
 *.zip
 *.xml
+.vscode/settings.json

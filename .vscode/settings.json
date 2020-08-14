@@ -1,16 +1,4 @@
 {
-    // "python.linting.enabled": true,
-    // "editor.fontSize": 15,
-    // "editor.tabSize": 4,
-    // "workbench.colorTheme": "Visual Studio Dark",
-    // "editor.accessibilitySupport": "off",
-    // "editor.formatOnPaste": true,
-    // "editor.formatOnSave": false,
-    // "editor.formatOnType": false,
-    // "python.linting.flake8Enabled": true,
-    // "python.linting.pylintEnabled": false,
-    // "python.dataScience.jupyterServerURI": "local",
-    "python.pythonPath": "/mnt/d/WSL/DevVenv/fir_dev_env/bin/python3",
     "python.dataScience.textOutputLimit": 0,
     // "python.formatting.provider": "yapf",
     // 配置远程jupyter notebook地址
