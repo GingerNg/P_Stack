@@ -10,3 +10,4 @@ file_tools/pdf_tools/.ipynb_checkpoints/*.ipynb
 *.zip
 *.xml
 .vscode/settings.json
+myapp.log_demo
