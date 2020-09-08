@@ -40,7 +40,9 @@ if __name__ == "__main__":
 
     logger.log("SNAKY", "Here we go!")
 
-    import notifiers
+    logger.info("=---",{"1":1})
+
+    # import notifiers
 
     # params = {
     #     "username": "you@gmail.com",
