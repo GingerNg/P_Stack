@@ -11,8 +11,16 @@ class DataTest:
 
     def __getitem__(self, key):
         # return "hello"
-        return self.d.get(key, 2)
+        return self.d.get(key, None)
+
+    def __setitem__(self, key, value):
+        self.d.__setitem__(key, value)
 
 
 data = DataTest(1, "192.168.2.11")
 print(data["id"])
+
+data["ii"] = 333
+print(data["ii"])
+
+print(data["iii"])
