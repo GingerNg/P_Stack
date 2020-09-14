@@ -105,16 +105,14 @@ def get_dict_by_kv(input_json, key, value):
     return key_values
 
 
-def extract_contents(input_json):
-    textList = get_values_by_key(j_data, key="textList")
-    contents = []
-    for text_item in textList:
-        contents.append("".join(get_values_by_key(text_item, key="content")))
-    return contents
+# def extract_contents(input_json):
+#     textList = get_values_by_key(j_data, key="textList")
+#     contents = []
+#     for text_item in textList:
+#         contents.append("".join(get_values_by_key(text_item, key="content")))
+#     return contents
 
 
-j_data = json.loads(
-    open("/home/ginger/Projects/Learning/P_Stack/basic/PPT自动排版技术分享会_姚庆源_20200810_第二稿.pptx_22.json").read())
 # results = get_values_by_key(j_data, key="TypeName")
 # results = get_dict_by_kv(j_data, key="TypeName", value="UDMPlugin.UDMColor")
 # results = get_dict_by_kv(j_data, key="TypeName", value="UDMPlugin.UDMColor")
@@ -125,17 +123,13 @@ j_data = json.loads(
 # textList = get_values_by_key(j_data, key="textList")
 # print(len(textList))
 # text_item = textList[0]
-# set_value_by_key(text_item, key="color", value={"AssemblyName": "UDMPlugin",
-#                                                 "TypeName": "UDMPlugin.UDMColor",
-#                                                 "r": "100",
-#                                                 "g": "0",
-#                                                 "b": "0",
-#                                                 "a": "255"
-#                                                 })
 # print(text_item)
 
 # print(results)
-print(extract_contents(j_data))
-results = get_values_by_key(j_data, key="textBulletProperties")
-for res in results:
-    print(res)
+# print(extract_contents(j_data))
+# results = get_values_by_key(j_data, key="textBulletProperties")
+# for res in results:
+#     print(res)
+
+if __name__ == "__main__":
+    print(json.loads(open("/home/ginger/Projects/Learning/P_Stack/basic/demo.json", "r").read()))

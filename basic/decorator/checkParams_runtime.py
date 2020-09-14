@@ -16,10 +16,11 @@ def RunTime(fn):
     def wrapper(*args, **kwargs):
         start_time = time.time()
         logging.warning("start-time is:{}".format(start_time))
-        fn(*args, **kwargs)
+        res = fn(*args, **kwargs)
         end_time = time.time()
         logging.info(
             'end-time is:{}; process time: {}'.format(end_time, str(end_time - start_time)))
+        return res
     return wrapper
 
 
@@ -36,6 +37,13 @@ def checkParams(fn):
 @RunTime
 def add(a, b):
     return a + b
+
+
+class A(object):
+
+    @RunTime
+    def add(self, a, b):
+        return a + b
 
 
 if __name__ == "__main__":
