@@ -77,8 +77,6 @@ class EDA:
 
 
 if __name__ == "__main__":
-    df = EDA.get_data(
-        "/home/ginger/Projects/ND/ppt_server/ppt_auto_layout/datasets/data_ppt/v4/db/37_work_template/ppt_scd.csv")
-    # print(df)
+    df = None
     label_col, num_col = EDA.get_col_type(df)
     EDA.eda_plot(df, label_col, num_col)
