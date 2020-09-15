@@ -3,8 +3,8 @@
 
 """
  @File: logging_demo.py
- @author: ginger 
- @software: PyCharm  
+ @author: ginger
+ @software: PyCharm
  @time: 18-2-8 上午8:40
  @desc:
  @source: https://blog.csdn.net/yypsober/article/details/51800120
@@ -29,7 +29,8 @@ logging.config.fileConfig('/home/ginger/Projects/Learning/P_Stack/basic/log_demo
 logger1 = getLogging()
 logger2 = getLogging2()
 # logger3 = getLogging2()
-logger1.debug("this is an test1 debug!")
+a = 1
+logger1.debug("this is an test1 debug!{}".format(a))
 logger2.debug("this is test2 debug")
 logger1.info("this is an test1! info ")
 logger2.info("this is test2 info ")
