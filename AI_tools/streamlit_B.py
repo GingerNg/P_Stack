@@ -3,7 +3,7 @@
 
 # 启动：
 # streamlit run streamlit_B.py
-
+# streamlit run streamlit_B.py --server.port 8101 --server.address "192.168.79.137"
 # 中文文档
 # http://cw.hubwiz.com/card/c/streamlit-manual/
 
