@@ -11,3 +11,4 @@ file_tools/pdf_tools/.ipynb_checkpoints/*.ipynb
 *.xml
 .vscode/settings.json
 myapp.log_demo
+testobject
