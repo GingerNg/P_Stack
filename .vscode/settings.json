@@ -1,5 +1,6 @@
 {
-    "python.dataScience.textOutputLimit": 0,
+    "liveServer.settings.port": 5501,
+    "jupyter.textOutputLimit": 0,
     // "python.formatting.provider": "yapf",
     // 配置远程jupyter notebook地址
     // "python.dataScience.jupyterServerURI": "http://localhost:8890/?token=e5929fc136f269ec922adf404fb17936ec2b983a9d71cc24",
