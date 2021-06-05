@@ -13,3 +13,5 @@ file_tools/pdf_tools/.ipynb_checkpoints/*.ipynb
 myapp.log_demo
 testobject
 test.h5
+baidu.restbook
+.DS_Store

@@ -1,3 +1,4 @@
+# 单例
 class Singleton():
     def __new__(cls, *args, **kwargs):
         if not hasattr(cls, "_instance"):

@@ -1,4 +1,4 @@
-for i in zip([1, 2, 3], ['a',  'b', 'c']):
+for i in zip([1, 2, 3], ['a',  'b', 'c', "d"]):
     print(i)
 
 print(dict(zip([1, 2, 3], range(5))))  # {1: 0, 2: 1, 3: 2}
